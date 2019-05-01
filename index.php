@@ -25,7 +25,7 @@
     $f3->route('GET /', function($f3, $param)
     {
         $view = new Template();
-        echo $view->render('views/home.html');
+        echo $view->render('views/my-pets.html');
     });
 
     // Run Fat-Free
