@@ -5,14 +5,8 @@ class Pet
     private $_name;
     private $_color;
 
-    /* // Default constructor
-    function __construct()
-    {
-        $this->_name = 'unknown';
-        $this->_color = '?';
-    }*/
-
-    // Parametrized constructor with default values
+    // Can only have 1 constructor
+    // Parametrized constructor with default values for if no parameter inputs are given
     function __construct($name = 'Unknown', $color = '?')
     {
         $this->_name = $name;
@@ -21,16 +15,16 @@ class Pet
 
     function eat()
     {
-        echo '<p>'. $this->_name .' is eating.</p>';
+        echo '<p>'. $this->_name .' is eating in a matching ' . $this->_color . ' bowl.</p>';
     }
 
     function talk()
     {
-        echo '<p>'. $this->_name .' is speaking ' . $this->_color. '</p>';
+        echo '<p>'. $this->_name .' is talking in the color ' . $this->_color . '</p>';
     }
 
     function sleep()
     {
-        echo '<p>'. $this->_name .' is sleeping.</p>';
+        echo '<p>'. $this->_name .' is sleeping in a matching ' . $this->_color . ' bed.</p>';
     }
 }
