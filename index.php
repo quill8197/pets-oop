@@ -7,7 +7,7 @@
  */
 
     // Start session
-    session_start();
+    //session_start();
 
     // Turn on error reporting
     ini_set('display_error', 1);
@@ -15,7 +15,6 @@
 
     // Require autoload file
     require_once ('vendor/autoload.php');
-    require('pet.php');
 
     // Create an instance of the base class
     $f3 = Base::instance();
@@ -29,6 +28,12 @@
         // Instantiate the Pet class
         $pet1 = new Pet();
         $f3->set('pet1', $pet1);
+
+        $pet2 = new Pet("Fido", "pink");
+        $f3->set('pet2', $pet2);
+
+        $pet3 = new Pet("Rufus");
+        $f3->set('pet3', $pet3);
 
         $view = new Template();
         echo $view->render('views/my-pets.html');
