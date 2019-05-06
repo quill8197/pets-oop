@@ -20,7 +20,7 @@ class Pet
 
     function talk()
     {
-        echo '<p>'. $this->_name .' is talking in the color ' . $this->_color . '</p>';
+        echo '<p>'. $this->_name .' is talking in the color ' . $this->_color . '.</p>';
     }
 
     function sleep()
