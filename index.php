@@ -6,38 +6,63 @@
  * Time: 2:16 PM
  */
 
-    // Start session
-    //session_start();
+// Start session
+//session_start();
 
-    // Turn on error reporting
-    ini_set('display_error', 1);
-    error_reporting(E_ALL);
+// Turn on error reporting
+ini_set('display_error', 1);
+error_reporting(E_ALL);
 
-    // Require autoload file
-    require_once ('vendor/autoload.php');
+// Require autoload file
+require_once ('vendor/autoload.php');
+// Must start the session after requiring the autoload or page changes won't display
+session_start();
 
-    // Create an instance of the base class
-    $f3 = Base::instance();
+// Create an instance of the base class
+$f3 = Base::instance();
 
-    // Turn on Fat-free error reporting
-    $f3->set('DEBUG', 3);
+// Turn on Fat-free error reporting
+$f3->set('DEBUG', 3);
 
-    // Define a default route
-    $f3->route('GET /', function($f3)
+// Define a default route
+$f3->route('GET /', function($f3)
+{
+    // Instantiate the Pet class
+    $pet1 = new Pet();
+    $f3->set('pet1', $pet1);
+
+    $pet2 = new Pet("Timmy", "pink");
+    $f3->set('pet2', $pet2);
+
+    $pet3 = new Pet("Rufus");
+    $f3->set('pet3', $pet3);
+
+    $view = new Template();
+    echo $view->render('views/my-pets.html');
+});
+
+$f3->route('GET /testing', function()
+{
+    $p1 = new Pet("Roger", "green");
+
+    $p1->setName("Jojo");
+    echo ($p1->getName().'<br>');
+
+    $p1->setColor("pink");
+    echo ($p1->getColor().'<br>');
+
+    if ($p1 instanceof Pet)
     {
-        // Instantiate the Pet class
-        $pet1 = new Pet();
-        $f3->set('pet1', $pet1);
+        echo 'Yes!<br>';
+    }
+    else
+    {
+        echo 'No!<br>';
+    }
 
-        $pet2 = new Pet("Fido", "pink");
-        $f3->set('pet2', $pet2);
+    $d1 = new Dog("Fido");
+    echo ($d1->fetch());
+});
 
-        $pet3 = new Pet("Rufus");
-        $f3->set('pet3', $pet3);
-
-        $view = new Template();
-        echo $view->render('views/my-pets.html');
-    });
-
-    // Run Fat-Free
-    $f3->run();
+// Run Fat-Free
+$f3->run();

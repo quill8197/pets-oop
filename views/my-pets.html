@@ -6,17 +6,17 @@
 </head>
 <body>
     <h1>My Pets</h1>
-    <h3>Pet 1</h3>
+    <h3>Pet 1: {{ @pet1->getName() }} is {{ @pet1->getColor()}}</h3>
     {{ @pet1->eat() }}
     {{ @pet1->talk() }}
     {{ @pet1->sleep() }}
 
-    <h3>Pet 2</h3>
+    <h3>Pet 2: {{ @pet2->getName() }} is {{ @pet2->getColor()}}</h3>
     {{ @pet2->eat() }}
     {{ @pet2->talk() }}
     {{ @pet2->sleep() }}
 
-    <h3>Pet 3</h3>
+    <h3>Pet 3: {{ @pet3->getName() }} is {{ @pet3->getColor()}}</h3>
     {{ @pet3->eat() }}
     {{ @pet3->talk() }}
     {{ @pet3->sleep() }}
