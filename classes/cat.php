@@ -2,30 +2,13 @@
 
 class Cat extends Pet
 {
-    private $_name;
-
-    function __construct($name = 'Unknown')
+    function __construct($name)
     {
-        $this->_name = $name;
-    }
-
-    function getName()
-    {
-        return $this->_name;
-    }
-
-    function setName($name)
-    {
-        $this->_name = $name;
-    }
-
-    function eat()
-    {
-        echo '';
+        parent::__construct($name);
     }
 
     function scratch()
     {
-        echo '';
+        echo '<p>'.$this->name. ' is scratching a matching '.$this->color.' post</p>';
     }
 }

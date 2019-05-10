@@ -10,8 +10,8 @@
  */
 class Pet
 {
-    //protected $name, $color;
-    private $_name, $_color;
+    protected $name, $color;
+    //private $_name, $_color;
 
     // Can only have 1 constructor
     // Parametrized constructor with default values for if no parameter inputs are given
@@ -23,8 +23,8 @@ class Pet
      */
     function __construct($name = 'Unknown', $color = '?')
     {
-        $this->_name = $name;
-        $this->_color = $color;
+        $this->name = $name;
+        $this->color = $color;
     }
 
     /**
@@ -33,7 +33,7 @@ class Pet
      */
     function getName()
     {
-        return $this->_name;
+        return $this->name;
     }
 
     /**
@@ -43,7 +43,7 @@ class Pet
      */
     function setName($name)
     {
-        $this->_name = $name;
+        $this->name = $name;
     }
 
     /**
@@ -52,7 +52,7 @@ class Pet
      */
     function getColor()
     {
-        return $this->_color;
+        return $this->color;
     }
 
     /**
@@ -62,7 +62,7 @@ class Pet
      */
     function setColor($color)
     {
-        $this->_color = $color;
+        $this->color = $color;
     }
 
     /**
@@ -70,7 +70,7 @@ class Pet
      */
     function eat()
     {
-        echo '<p>'. $this->_name .' is eating</p>';
+        echo '<p>'. $this->name .' is eating</p>';
     }
 
     /**
@@ -78,7 +78,7 @@ class Pet
      */
     function talk()
     {
-        echo '<p>'. $this->_name .' is talking</p>';
+        echo '<p>'. $this->name .' is talking</p>';
     }
 
     /**
@@ -86,6 +86,6 @@ class Pet
      */
     function sleep()
     {
-        echo '<p>'. $this->_name .' is sleeping</p>';
+        echo '<p>'. $this->name .' is sleeping</p>';
     }
 }

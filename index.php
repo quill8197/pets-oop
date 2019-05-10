@@ -31,10 +31,10 @@ $f3->route('GET /', function($f3)
     $pet1 = new Pet();
     $f3->set('pet1', $pet1);
 
-    $pet2 = new Pet("Timmy", "pink");
+    $pet2 = new Dog("Timmy", "terrier");
     $f3->set('pet2', $pet2);
 
-    $pet3 = new Pet("Rufus");
+    $pet3 = new Cat("Rufus");
     $f3->set('pet3', $pet3);
 
     $view = new Template();
@@ -60,8 +60,11 @@ $f3->route('GET /testing', function()
         echo 'No!<br>';
     }
 
-    $d1 = new Dog("Fido");
+    $d1 = new Dog("Fido", "Labrador");
     echo ($d1->fetch());
+
+    $c1 = new Cat("Whiskers");
+    echo ($c1->scratch());
 });
 
 // Run Fat-Free

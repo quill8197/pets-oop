@@ -2,23 +2,12 @@
 
 class Dog extends Pet
 {
-     private $_name;
      private $_breed;
- /*
-     function __construct($name = 'Unknown', $breed = '?')
+
+     function __construct($name, $breed = 'dog')
      {
-         $this->_name = $name;
+         parent::__construct($name);
          $this->_breed = $breed;
-     }
-
-     function getName()
-     {
-         return $this->_name;
-     }
-
-     function setName($name)
-     {
-         $this->_name = $name;
      }
 
      function getBreed()
@@ -30,14 +19,10 @@ class Dog extends Pet
      {
          $this->_breed = $breed;
      }
- */
-    function eat()
-    {
-        echo '';
-    }
 
     function fetch()
     {
-        echo '<p>'.$this->getName(). ' is fetching</p>';
+        echo '<p>'.$this->getName(). ', a '.$this->_breed.
+            ', is fetching a matching '.$this->color.' frisbee</p>';
     }
 }
